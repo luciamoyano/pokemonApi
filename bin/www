@@ -15,6 +15,16 @@ const http = require("http");
 const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
+/**Connecting to db
+ *
+ */
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/pokemon", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+});
+
 /**
  * Create HTTP server.
  */
